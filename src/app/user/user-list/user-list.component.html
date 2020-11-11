@@ -1,0 +1,17 @@
+<h3>User Table</h3>
+<table [ngClass]="tableStyle">
+    <tr>
+        <th>Id</th>
+        <th>User Name</th>
+        <th>Name</th>
+        <th>Reviewer?</th>
+        <th>Admin?</th>
+    </tr>
+    <tr>
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.firstName}} {{user.lastName}}</td>
+        <td>{{user.isReviewer ? "Yes" : "No" }}</td>
+        <td>{{user.isAdmin ? "Yes" : "No" }}</td>
+    </tr>
+</table>
