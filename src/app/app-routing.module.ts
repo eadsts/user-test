@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/users/list", pathMatch: "full" },
   //starts up user list automatically when app starts
-  { path: "users/list", component: UserListComponent }
+  { path: "users/list", component: UserListComponent },
+  { path: "users/edit/:id", component: UserEditComponent }
 ];
 
 @NgModule({
