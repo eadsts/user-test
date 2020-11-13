@@ -10,6 +10,7 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { BoolDisplayPipe } from './pipes/bool-display.pipe';
 import { PassDisplayPipe } from './pipes/pass-display.pipe';
 import { UserSearchPipe } from './user/user-search.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserSearchPipe } from './user/user-search.pipe';
     UserEditComponent,
     BoolDisplayPipe,
     PassDisplayPipe,
-    UserSearchPipe
+    UserSearchPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

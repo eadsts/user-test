@@ -4,20 +4,20 @@
 </div>
 <table [ngClass]="tableStyle">
     <tr>
-        <th>Id</th>
-        <th>User Name</th>
+        <th><a (click)="sortColumn('id')" class="btn btn-link">Id</a></th>
+        <th><a (click)="sortColumn('lastName')" class="btn btn-link">Name</a></th>
+        <th><a (click)="sortColumn('username')" class="btn btn-link">Username</a></th>
         <th>Password</th>
-        <th>Name</th>
         <th>Reviewer?</th>
         <th>Admin?</th>
         <th>Actions</th>
     </tr>
-    <tr *ngFor="let user of users | userSearch:searchCriteria">
+    <tr *ngFor="let user of users | userSearch:searchCriteria | sort:sortCriteria:ascSequence">
         
         <td>{{user.id}}</td>
+        <td>{{user.firstName}} {{user.lastName}}</td>
         <td>{{user.username}}</td>
         <td>{{user.password | masked }}</td>
-        <td>{{user.firstName}} {{user.lastName}}</td>
         <!-- function bool from bool-display.pipe.ts in french  -->
         <td>{{user.isReviewer | bool:"fr" }}</td>
         <td>{{user.isAdmin | bool:"fr" }}</td>

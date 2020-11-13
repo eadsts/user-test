@@ -11,6 +11,25 @@ export class UserListComponent implements OnInit {
 
   users: User[] = [];
   searchCriteria: string = "";
+  sortCriteria: string = "lastName";
+  ascSequence: boolean = true;
+  tableStyle: string = "table table-sm";
+
+  //on click, pass in the column the user clicked on as a
+  //string for the sort. return void
+  //sort by ascending 
+  sortColumn(column: string): void {
+    //if they clicked on teh same column (after they clicked on it to sort)
+    //column = lastName and sortcriteria is lastName
+    if(column == this.sortCriteria) {
+      //sort by ascending and then flip it if they click the button again
+      this.ascSequence = !this.ascSequence;
+      return;
+    }
+    //if they click on a different column, set it to ascending sequence
+    this.sortCriteria = column;
+    this.ascSequence = true;//ascending sequence
+  }
   tableStyle: string = "table table-sm";
 
   constructor(
