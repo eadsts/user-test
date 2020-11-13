@@ -10,8 +10,8 @@ import { User } from '../user.class';
 export class UserListComponent implements OnInit {
 
   users: User[] = [];
+  searchCriteria: string = "";
   tableStyle: string = "table table-sm";
-
 
   constructor(
     private usersvc: UserService
